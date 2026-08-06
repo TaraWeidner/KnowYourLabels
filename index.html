@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#4f2a7f">
+  <meta name="description" content="Know Your Labels — an Inclusive Health nutrition-label trivia game.">
+  <title>Know Your Labels | Inclusive Health</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to game</a>
+
+  <header class="site-header">
+    <div class="brand-lockup" aria-label="Inclusive Health">
+      <div class="brand-mark" aria-hidden="true">IH</div>
+      <div>
+        <p class="brand-name">Inclusive Health</p>
+        <p class="brand-tagline">Healthcare Where YOU Belong</p>
+      </div>
+    </div>
+    <span class="event-chip">Big Day of Play</span>
+  </header>
+
+  <main id="main-content" class="app-shell">
+    <section id="start-screen" class="screen start-screen" aria-labelledby="game-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Nutrition-label trivia</p>
+        <h1 id="game-title">Know Your Labels</h1>
+        <p class="hero-text">
+          Read the label, spot the serving-size traps, and prove you can decode the facts behind everyday foods.
+        </p>
+
+        <div class="feature-list" aria-label="Game features">
+          <div class="feature-item"><span aria-hidden="true">🔎</span><span>Real label-reading skills</span></div>
+          <div class="feature-item"><span aria-hidden="true">⚡</span><span>Instant explanations</span></div>
+          <div class="feature-item"><span aria-hidden="true">🏆</span><span>Scores, streaks, and badges</span></div>
+        </div>
+      </div>
+
+      <div class="setup-card">
+        <h2>Set up your round</h2>
+
+        <label class="field-label" for="player-name">Player name <span class="optional">(optional)</span></label>
+        <input id="player-name" class="text-input" type="text" maxlength="30" autocomplete="nickname" placeholder="Nutrition detective">
+
+        <label class="field-label" for="game-length">Number of questions</label>
+        <select id="game-length" class="select-input">
+          <option value="5">5 — Quick bite</option>
+          <option value="10" selected>10 — Full serving</option>
+          <option value="all">All questions</option>
+        </select>
+
+        <label class="field-label" for="difficulty">Difficulty</label>
+        <select id="difficulty" class="select-input">
+          <option value="mixed" selected>Mixed</option>
+          <option value="easy">Label Rookie</option>
+          <option value="medium">Label Detective</option>
+          <option value="hard">Label Ninja</option>
+        </select>
+
+        <label class="toggle-row" for="timer-toggle">
+          <span>
+            <strong>Timed mode</strong>
+            <small>20 seconds per question</small>
+          </span>
+          <span class="switch">
+            <input id="timer-toggle" type="checkbox">
+            <span class="switch-track" aria-hidden="true"></span>
+          </span>
+        </label>
+
+        <button id="start-button" class="primary-button" type="button">Start the challenge</button>
+        <p class="setup-note">Sample labels are educational and may not match a specific brand.</p>
+      </div>
+    </section>
+
+    <section id="game-screen" class="screen game-screen is-hidden" aria-labelledby="question-heading">
+      <div class="game-toolbar">
+        <div class="progress-group">
+          <div class="progress-copy">
+            <span id="question-count">Question 1 of 10</span>
+            <span id="difficulty-badge" class="difficulty-badge">Label Rookie</span>
+          </div>
+          <div class="progress-track" aria-hidden="true"><div id="progress-bar" class="progress-bar"></div></div>
+        </div>
+
+        <div class="scoreboard" aria-label="Current game score">
+          <div class="score-stat"><span>Score</span><strong id="score-value">0</strong></div>
+          <div class="score-stat"><span>Streak</span><strong id="streak-value">0</strong></div>
+          <div id="timer-wrap" class="score-stat timer-stat is-hidden"><span>Time</span><strong id="timer-value">20</strong></div>
+        </div>
+      </div>
+
+      <div class="question-layout">
+        <article class="label-panel" aria-labelledby="product-name">
+          <div class="product-heading">
+            <div>
+              <p class="panel-kicker">Common food item</p>
+              <h2 id="product-name">Product</h2>
+            </div>
+            <span id="product-category" class="category-chip">Snack</span>
+          </div>
+
+          <div id="nutrition-label" class="nutrition-label" aria-label="Nutrition Facts label">
+            <h3>Nutrition Facts</h3>
+            <p id="servings-line" class="servings-line"></p>
+            <div class="serving-row">
+              <span>Serving size</span>
+              <strong id="serving-size"></strong>
+            </div>
+            <div class="heavy-rule"></div>
+            <p class="amount-label">Amount per serving</p>
+            <div class="calorie-row">
+              <span>Calories</span>
+              <strong id="calorie-value"></strong>
+            </div>
+            <div class="medium-rule"></div>
+            <p class="dv-heading">% Daily Value*</p>
+            <div id="nutrient-rows"></div>
+            <div class="medium-rule"></div>
+            <p class="label-footnote">* The % Daily Value tells you how much a nutrient in one serving contributes to a daily diet.</p>
+          </div>
+        </article>
+
+        <section class="question-panel">
+          <p id="question-topic" class="panel-kicker">Serving-size math</p>
+          <h2 id="question-heading" tabindex="-1">Question text</h2>
+          <p id="question-helper" class="question-helper">Use the label to choose the best answer.</p>
+
+          <div id="answer-list" class="answer-list" role="group" aria-labelledby="question-heading"></div>
+
+          <div id="feedback-box" class="feedback-box is-hidden" aria-live="polite">
+            <div class="feedback-heading-row">
+              <span id="feedback-icon" class="feedback-icon" aria-hidden="true"></span>
+              <h3 id="feedback-title"></h3>
+            </div>
+            <p id="feedback-text"></p>
+          </div>
+
+          <button id="next-button" class="primary-button next-button is-hidden" type="button">Next question</button>
+          <p class="keyboard-hint">Keyboard: press 1–4 to answer, then Enter to continue.</p>
+        </section>
+      </div>
+    </section>
+
+    <section id="results-screen" class="screen results-screen is-hidden" aria-labelledby="results-title">
+      <div class="results-card">
+        <div id="results-icon" class="results-icon" aria-hidden="true">🏆</div>
+        <p class="eyebrow">Round complete</p>
+        <h1 id="results-title" tabindex="-1">Nutrition Label Legend!</h1>
+        <p id="results-message" class="results-message"></p>
+
+        <div class="results-grid">
+          <div class="result-stat"><span>Final score</span><strong id="final-score">0</strong></div>
+          <div class="result-stat"><span>Accuracy</span><strong id="final-accuracy">0%</strong></div>
+          <div class="result-stat"><span>Best streak</span><strong id="final-streak">0</strong></div>
+        </div>
+
+        <div class="takeaway-box">
+          <h2>Label-reading shortcut</h2>
+          <p><strong>5% Daily Value or less</strong> is generally low. <strong>20% or more</strong> is generally high.</p>
+        </div>
+
+        <div class="results-actions">
+          <button id="play-again-button" class="primary-button" type="button">Play again</button>
+          <button id="change-settings-button" class="secondary-button" type="button">Change settings</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Educational game only — nutrition needs vary, and labels differ by product.</p>
+  </footer>
+
+  <div id="live-region" class="sr-only" aria-live="polite"></div>
+
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
