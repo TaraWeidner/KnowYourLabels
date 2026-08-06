@@ -22,14 +22,12 @@ The current question bank contains 18 educational questions covering serving siz
 - `app.js` — gameplay, scoring, timer, and results
 - `.nojekyll` — tells GitHub Pages to serve the files as a plain static site
 
-## Publish with GitHub Pages
+## Deployment
 
-GitHub Pages publishes this site from the `main` branch at `/(root)`.
+The site is deployed automatically from `main` using GitHub Actions.
 
-The published game URL is:
+Live game:
 
 `https://taraweidner.github.io/KnowYourLabels/`
-
-Deployment refresh triggered August 6, 2026.
 
 > Educational game only. Nutrition information varies by product and brand.
