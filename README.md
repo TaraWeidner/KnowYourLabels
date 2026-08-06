@@ -24,15 +24,12 @@ The current question bank contains 18 educational questions covering serving siz
 
 ## Publish with GitHub Pages
 
-In the repository, open **Settings → Pages**. Under **Build and deployment**:
+GitHub Pages publishes this site from the `main` branch at `/(root)`.
 
-1. Set **Source** to `Deploy from a branch`
-2. Select the `main` branch
-3. Select `/(root)`
-4. Click **Save**
-
-The published game URL will be:
+The published game URL is:
 
 `https://taraweidner.github.io/KnowYourLabels/`
+
+Deployment refresh triggered August 6, 2026.
 
 > Educational game only. Nutrition information varies by product and brand.
