@@ -1,0 +1,228 @@
+/* Enhancements for the Inclusive Health logo and Label Learning Guide */
+
+.brand-lockup {
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo {
+  display: block;
+  width: clamp(72px, 7.5vw, 98px);
+  height: auto;
+  object-fit: contain;
+}
+
+.question-layout {
+  grid-template-columns: minmax(290px, 0.9fr) minmax(0, 1.05fr) minmax(290px, 0.88fr);
+}
+
+.learning-guide {
+  align-self: start;
+  padding: clamp(1rem, 2.5vw, 1.35rem);
+  border: 1px solid rgba(19, 127, 122, 0.22);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(229, 245, 243, 0.84), rgba(255, 255, 255, 0.94));
+  box-shadow: var(--shadow);
+}
+
+.guide-header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.8rem;
+  align-items: start;
+  margin-bottom: 1rem;
+}
+
+.guide-book {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--teal), var(--purple));
+  font-size: 1.35rem;
+  font-weight: 900;
+}
+
+.learning-guide h2 {
+  margin: 0.2rem 0 0.35rem;
+  color: var(--purple-dark);
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  letter-spacing: -0.025em;
+}
+
+.guide-intro {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.guide-section {
+  overflow: hidden;
+  margin-top: 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.guide-section summary {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.78rem 0.85rem;
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-weight: 850;
+  cursor: pointer;
+  list-style: none;
+}
+
+.guide-section summary::-webkit-details-marker { display: none; }
+
+.guide-section summary::after {
+  content: "+";
+  grid-column: 3;
+  color: var(--teal);
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.guide-section[open] summary::after { content: "−"; }
+
+.guide-section summary:focus-visible {
+  outline: 3px solid rgba(19, 127, 122, 0.25);
+  outline-offset: -3px;
+}
+
+.guide-number {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  color: #fff;
+  background: #287fc0;
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.guide-number-gold { background: #d79a18; }
+.guide-number-purple { background: var(--purple); }
+.guide-number-pink { background: var(--pink); }
+.guide-number-teal { background: var(--teal); }
+
+.guide-definitions {
+  margin: 0;
+  padding: 0 0.9rem 0.9rem;
+}
+
+.guide-definitions > div {
+  padding: 0.72rem 0;
+  border-top: 1px solid rgba(104, 95, 115, 0.14);
+}
+
+.guide-definitions dt {
+  color: var(--purple-dark);
+  font-size: 0.86rem;
+  font-weight: 850;
+}
+
+.guide-definitions dd {
+  margin: 0.22rem 0 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.48;
+}
+
+.why-labels-matter {
+  margin-top: 0.85rem;
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
+  color: #075752;
+  background: rgba(229, 245, 243, 0.96);
+}
+
+.why-labels-matter strong {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.92rem;
+}
+
+.why-labels-matter p {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 1120px) {
+  .question-layout {
+    grid-template-columns: minmax(300px, 0.9fr) minmax(0, 1.1fr);
+  }
+
+  .learning-guide {
+    grid-column: 1 / -1;
+  }
+
+  .learning-guide .guide-header {
+    max-width: 760px;
+  }
+
+  .learning-guide {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem;
+  }
+
+  .learning-guide .guide-header,
+  .learning-guide .why-labels-matter {
+    grid-column: 1 / -1;
+  }
+
+  .guide-section {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 860px) {
+  .brand-logo {
+    width: 68px;
+  }
+
+  .question-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .learning-guide {
+    grid-column: auto;
+    display: block;
+  }
+
+  .guide-section {
+    margin-top: 0.7rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .brand-logo {
+    width: 58px;
+  }
+
+  .site-header {
+    align-items: center;
+  }
+
+  .learning-guide {
+    padding: 0.9rem;
+  }
+
+  .guide-header {
+    grid-template-columns: 1fr;
+  }
+
+  .guide-book {
+    width: 36px;
+  }
+}

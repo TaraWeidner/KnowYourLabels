@@ -7,17 +7,14 @@
   <meta name="description" content="Know Your Labels — an Inclusive Health nutrition-label trivia game.">
   <title>Know Your Labels | Inclusive Health</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="learning-guide.css">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to game</a>
 
   <header class="site-header">
-    <div class="brand-lockup" aria-label="Inclusive Health">
-      <div class="brand-mark" aria-hidden="true">IH</div>
-      <div>
-        <p class="brand-name">Inclusive Health</p>
-        <p class="brand-tagline">Healthcare Where YOU Belong</p>
-      </div>
+    <div class="brand-lockup">
+      <img class="brand-logo" src="assets/inclusive-health-logo.webp" alt="Inclusive Health">
     </div>
     <span class="event-chip">Big Day of Play</span>
   </header>
@@ -141,6 +138,108 @@
           <button id="next-button" class="primary-button next-button is-hidden" type="button">Next question</button>
           <p class="keyboard-hint">Keyboard: press 1–4 to answer, then Enter to continue.</p>
         </section>
+
+        <aside class="learning-guide" aria-labelledby="learning-guide-title">
+          <div class="guide-header">
+            <div class="guide-book" aria-hidden="true">▤</div>
+            <div>
+              <p class="panel-kicker">Learn as you play</p>
+              <h2 id="learning-guide-title">Label Learning Guide</h2>
+              <p class="guide-intro">Open any section for a quick explanation of what the numbers on a Nutrition Facts label mean.</p>
+            </div>
+          </div>
+
+          <details class="guide-section" open>
+            <summary><span class="guide-number">1</span><span>Serving information</span></summary>
+            <dl class="guide-definitions">
+              <div>
+                <dt>Serving size</dt>
+                <dd>The amount used to calculate every number on the label. Compare it with how much you actually plan to eat or drink.</dd>
+              </div>
+              <div>
+                <dt>Servings per container</dt>
+                <dd>How many servings are in the entire package. If you eat two servings, most listed amounts are doubled.</dd>
+              </div>
+            </dl>
+          </details>
+
+          <details class="guide-section" open>
+            <summary><span class="guide-number guide-number-gold">2</span><span>Calories &amp; Daily Value</span></summary>
+            <dl class="guide-definitions">
+              <div>
+                <dt>Calories</dt>
+                <dd>A measure of energy in one serving. Individual energy needs vary, so calories are most useful in context with serving size and the rest of the label.</dd>
+              </div>
+              <div>
+                <dt>% Daily Value (%DV)</dt>
+                <dd>A quick way to see whether one serving is relatively low or high in a nutrient. As a general guide, 5% DV or less is low and 20% DV or more is high.</dd>
+              </div>
+            </dl>
+          </details>
+
+          <details class="guide-section">
+            <summary><span class="guide-number guide-number-purple">3</span><span>Fats &amp; cholesterol</span></summary>
+            <dl class="guide-definitions">
+              <div>
+                <dt>Total fat</dt>
+                <dd>The combined amount of fat in one serving, including saturated, unsaturated, and trans fats.</dd>
+              </div>
+              <div>
+                <dt>Saturated fat</dt>
+                <dd>One type of dietary fat. The %DV can help you compare how much different foods contain.</dd>
+              </div>
+              <div>
+                <dt>Trans fat</dt>
+                <dd>Listed in grams. Nutrition Facts labels do not show a % Daily Value for trans fat.</dd>
+              </div>
+              <div>
+                <dt>Cholesterol</dt>
+                <dd>A waxy substance found in animal-derived foods. The label shows both the amount in milligrams and its %DV.</dd>
+              </div>
+            </dl>
+          </details>
+
+          <details class="guide-section">
+            <summary><span class="guide-number guide-number-pink">4</span><span>Carbohydrates &amp; sugars</span></summary>
+            <dl class="guide-definitions">
+              <div>
+                <dt>Total carbohydrate</dt>
+                <dd>Includes starches, fiber, and sugars in one serving.</dd>
+              </div>
+              <div>
+                <dt>Dietary fiber</dt>
+                <dd>A type of carbohydrate the body does not fully digest. Fiber supports digestive health and can help with fullness.</dd>
+              </div>
+              <div>
+                <dt>Total sugars</dt>
+                <dd>All sugars in the serving, including naturally occurring sugars and added sugars.</dd>
+              </div>
+              <div>
+                <dt>Added sugars</dt>
+                <dd>Sugars added during processing or preparation. This amount is included within Total Sugars, not added on top of it.</dd>
+              </div>
+            </dl>
+          </details>
+
+          <details class="guide-section">
+            <summary><span class="guide-number guide-number-teal">5</span><span>Sodium &amp; protein</span></summary>
+            <dl class="guide-definitions">
+              <div>
+                <dt>Sodium</dt>
+                <dd>An essential mineral and a major component of salt. The label helps you compare sodium amounts among foods and serving sizes.</dd>
+              </div>
+              <div>
+                <dt>Protein</dt>
+                <dd>A nutrient the body uses to build and repair muscles, tissues, enzymes, and other structures.</dd>
+              </div>
+            </dl>
+          </details>
+
+          <div class="why-labels-matter">
+            <strong>Why labels matter</strong>
+            <p>Nutrition labels make it easier to compare foods, notice serving-size differences, and understand what is actually in a portion.</p>
+          </div>
+        </aside>
       </div>
     </section>
 
