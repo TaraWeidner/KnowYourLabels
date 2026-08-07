@@ -18,15 +18,16 @@ The current question bank contains 18 educational questions covering serving siz
 
 - `index.html` — game interface
 - `styles.css` — responsive Inclusive Health-inspired styling
+- `learning-guide.css` — styling for the nutrition label learning guide
 - `questions.js` — editable question bank
 - `app.js` — gameplay, scoring, timer, and results
 - `.nojekyll` — tells GitHub Pages to serve the files as a plain static site
 
-## Deployment
+## Publish with GitHub Pages
 
-The site is deployed automatically from `main` using GitHub Actions.
+GitHub Pages publishes this site with the repository workflow on `main`.
 
-Live game:
+The published game URL is:
 
 `https://taraweidner.github.io/KnowYourLabels/`
 
